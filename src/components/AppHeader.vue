@@ -24,16 +24,16 @@ export default {
   border-bottom: 3px solid #3a628d;
 
   #content{
-    height: 5rem;
+    height: 4rem;
     max-width: 1120px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
 
     display: flex;
     align-items: center;
 
     img{
-      height: 3.5rem;
+      height: 3.2rem;
       width: auto;
     }
 
