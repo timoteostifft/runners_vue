@@ -2,6 +2,7 @@
   <div id="app">
     <AppHeader/>
     <AppSearchbar/>
+    <AppTestCard/>
   </div>
 </template>
 
@@ -9,12 +10,14 @@
 /* eslint-disable */
 import AppHeader from './components/AppHeader.vue';
 import AppSearchbar from './components/AppSearchBar.vue';
+import AppTestCard from './components/AppTestCard.vue';
 
 export default {
   name: 'App',
   components: {
     AppHeader,
     AppSearchbar,
+    AppTestCard
   },
 }
 </script>
