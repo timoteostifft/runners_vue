@@ -3,8 +3,11 @@
   <div id="content">
     <div id='searchArea'>
       <img alt="App logo" src="../assets/searchIcon.png">
+      Pesquise aqui
     </div>
-    <button id="filter"/>
+    <button id="filter">
+      <img alt="App logo" src="../assets/filterIcon.png">
+    </button>
   </div>
 </div>
 </template>
@@ -12,9 +15,6 @@
 <script>
 export default {
   name: 'AppSearchbar',
-  props: {
-    margin: String,
-  },
 };
 </script>
 
@@ -27,7 +27,7 @@ export default {
   max-width: 820px;
   width: 100%;
 
-  margin: 4rem auto;
+  margin: 4rem auto 0;
 
   #content{
     display: flex;
@@ -51,13 +51,31 @@ export default {
 
       img{
         margin-left: -2.2px;
-        height: 3rem;
+        height: 2.5rem;
         width: auto;
+
+        margin-right: 0.5rem;
       }
     }
 
     #filter{
-      //
+      height: 3rem;
+      width: 3rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 20px 0px;
+      border: 3px solid #3a628d;
+
+      cursor: pointer;
+
+      img{
+        height: 50%;
+        width: auto;
+      }
     }
   }
 }
