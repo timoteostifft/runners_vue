@@ -1,28 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <AppHeader/>
+    <AppSearchbar/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+/* eslint-disable */
+import AppHeader from './components/AppHeader.vue';
+import AppSearchbar from './components/AppSearchBar.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    AppHeader,
+    AppSearchbar,
   },
-};
+}
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  background: #2e4c6d;
 }
+
 </style>
