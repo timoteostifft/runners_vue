@@ -27,7 +27,7 @@ export default {
   max-width: 820px;
   width: 100%;
 
-  margin: 4rem auto 0;
+  margin: 4rem auto;
 
   #content{
     display: flex;
