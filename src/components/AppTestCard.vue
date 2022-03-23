@@ -1,16 +1,22 @@
 <template>
 <div id="container">
   <div id="content">
-    <img alt="App logo" src="../assets/runner.png">
+    <img id="mainImage" alt="App logo" src="../assets/runner.png">
     <div id="info">
       <p>Data: <span>20/04/2022</span></p>
       <p>Extensão: <span>24 KM</span></p>
       <p>Participantes: <span>42</span></p>
     </div>
     <nav>
-      <button></button>
-      <button></button>
-      <button></button>
+      <button id="removeButton">
+        <img alt="Remove Icon" src="../assets/removeIcon.png">
+      </button>
+      <button id="listButton">
+        <img alt="List Icon" src="../assets/listIcon.png">
+      </button>
+      <button id="addButton">
+        <img alt="Register Icon" src="../assets/addIcon.png">
+      </button>
     </nav>
   </div>
 </div>
@@ -64,7 +70,7 @@ export default {
       border-radius: 1rem;
       box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 20px 0px;
 
-      img{
+      #mainImage{
         height: 100%;
         width: 5rem;
 
@@ -89,16 +95,47 @@ export default {
         display: flex;
         flex-direction: column;
 
-        margin: auto 2px auto auto;
+        margin: auto 4px auto auto;
 
         button{
           height: 35px;
           width: 35px;
 
           border-radius: 1rem;
+          border: none;
 
           & + button{
             margin-top: 14px;
+          }
+
+          &:nth-child(1){
+            background: #E52e4d;
+
+            img{
+              margin: 0 auto;
+              height: 18px;
+              width: auto;
+            }
+          }
+
+          &:nth-child(2){
+            background: #2e4c6d;
+
+            img{
+              margin: 0 auto;
+              height: 16px;
+              width: auto;
+            }
+          }
+
+          &:nth-child(3){
+            background: #24c077;
+
+            img{
+              margin: 0 auto;
+              height: 18px;
+              width: auto;
+            }
           }
         }
       }
