@@ -28,11 +28,14 @@
           <h3>Acompanhe</h3>
         </div>
         <div id="info">
-          <a href="https://twitter.com/camaqua_prefa">
+          <a href="https://www.facebook.com/deliverit.brasil/">
             <img alt="Facebook logo" src="../assets/facebookIcon.png">
           </a>
-          <a href="https://www.facebook.com/prefeituradecamaqua">
+          <a href="https://www.instagram.com/deliverit.brasil/">
             <img alt="Instagram logo" src="../assets/instagramIcon.png">
+          </a>
+          <a href="https://twitter.com/">
+            <img alt="Instagram logoTwitter" src="../assets/twitterIcon.png">
           </a>
         </div>
       </div>
@@ -59,8 +62,8 @@ export default {
     height: 100%;
     max-width: 1120px;
 
+    padding: 1rem 2rem;
     margin: 0 auto;
-    padding: 2rem;
 
     @media (min-width: 844px) {
       display: flex;
