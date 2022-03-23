@@ -37,12 +37,16 @@ export default {
     margin: 0 20px;
 
     & + &{
-      margin-top: 55px;
+      margin-top: 40px;
+    }
+
+    &:first-child{
+      margin-top: 50px;
     }
 
     &:last-child{
-        margin-bottom: 55px;
-      }
+      margin-bottom: 55px;
+    }
 
     @media (max-width: 600px) {
       margin: 0;
@@ -50,11 +54,11 @@ export default {
 
     @media (min-width: 844px) {
       & + &{
-        margin-top: 55px;
+        margin-top: 50px;
       }
 
       &:first-child{
-        margin-top: 55px;
+        margin-top: 50px;
       }
     }
 
@@ -63,6 +67,7 @@ export default {
       height: 100%;
 
       display: flex;
+      align-items: center;
       flex-direction: row;
 
       background: #e7eaee;
@@ -95,14 +100,14 @@ export default {
         display: flex;
         flex-direction: column;
 
-        margin: auto 4px auto auto;
+        margin: 6px 8px 6px auto;
 
         button{
           height: 35px;
           width: 35px;
 
-          border-radius: 1rem;
           border: none;
+          border-radius: 1rem;
 
           & + button{
             margin-top: 14px;
@@ -119,7 +124,7 @@ export default {
           }
 
           &:nth-child(2){
-            background: #2e4c6d;
+            background: #46568f;
 
             img{
               margin: 0 auto;
@@ -129,7 +134,7 @@ export default {
           }
 
           &:nth-child(3){
-            background: #24c077;
+            background: #25bb75;
 
             img{
               margin: 0 auto;
