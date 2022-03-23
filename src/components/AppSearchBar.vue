@@ -6,7 +6,7 @@
       Pesquise aqui
     </div>
     <button id="filter">
-      <img alt="App logo" src="../assets/filterIcon.png">
+      <img alt="Filter Image" src="../assets/filterIcon.png">
     </button>
   </div>
 </div>
