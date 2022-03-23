@@ -6,9 +6,6 @@
   <AppTestCard/>
   <AppTestCard/>
   <AppTestCard/>
-  <AppTestCard/>
-  <AppTestCard/>
-  <AppTestCard/>
 </div>
 </template>
 
