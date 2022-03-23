@@ -28,10 +28,20 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: 'Poppins', sans-serif;
   height: 100%;
   background: #2e4c6d;
+
+  button{
+    cursor: pointer;
+
+    transition: filter 0.5s;
+
+    &:hover{
+      filter: brightness(0.8);
+    }
+  }
 }
 </style>
