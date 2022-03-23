@@ -65,7 +65,7 @@ export default {
 
       & + #content{
 
-        margin-top: 2.5rem;
+        margin-top: 5px;
     }
 
     #title{
