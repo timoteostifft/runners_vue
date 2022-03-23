@@ -7,7 +7,8 @@
         </div>
         <div id="info">
           <p>
-            Av. Independência, 1299 - sala 502 - Independência
+            Av. Independência, 1299 -
+            <br> sala 502 - Independência
           </p>
         </div>
       </div>
@@ -59,13 +60,18 @@ export default {
     max-width: 1120px;
 
     margin: 0 auto;
-    padding: 1rem;
+    padding: 2rem;
 
-    #content{
+    @media (min-width: 844px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
-      & + #content{
-
-        margin-top: 5px;
+    @media (max-width: 843px) {
+      br{
+        display: none;
+      }
     }
 
     #title{
@@ -102,6 +108,6 @@ export default {
       }
     }
   }
-  }
 }
+
 </style>
