@@ -43,7 +43,7 @@ export default {
         margin-left: -1px;
 
         height: 100%;
-        width: 4.5rem;
+        width: 6rem;
       }
 
       #info{
