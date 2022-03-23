@@ -2,11 +2,7 @@
   <div id="app">
     <AppHeader/>
     <AppSearchbar/>
-    <AppTestCard/>
-    <AppTestCard/>
-    <AppTestCard/>
-    <AppTestCard/>
-    <AppTestCard/>
+    <AppTestCardContainer/>
     <AppFooter/>
   </div>
 </template>
@@ -15,7 +11,7 @@
 /* eslint-disable */
 import AppHeader from './components/AppHeader.vue';
 import AppSearchbar from './components/AppSearchBar.vue';
-import AppTestCard from './components/AppTestCard.vue';
+import AppTestCardContainer from './components/AppTestCardContainer.vue';
 import AppFooter from './components/AppFooter.vue'
 
 export default {
@@ -23,7 +19,7 @@ export default {
   components: {
     AppHeader,
     AppSearchbar,
-    AppTestCard,
+    AppTestCardContainer,
     AppFooter,
   },
 }
