@@ -19,7 +19,7 @@ export default {
   #container{
     display: flex;
     max-width: 820px;
-    margin: 0 auto;
+    margin: 0 auto 40px;
 
     align-items: center;
 

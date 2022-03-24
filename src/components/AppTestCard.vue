@@ -50,6 +50,7 @@ export default {
   }
 
   #info{
+    margin-top: 24px;
     margin-left: 12px;
 
     display: flex;
@@ -58,6 +59,7 @@ export default {
     p{
       color: #3a628d;
       font-weight: 500;
+      height: 3rem;
       font-size: 14px;
     }
   }
