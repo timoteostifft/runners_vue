@@ -1,7 +1,8 @@
 <template>
-<div id="testsContainer">
-  <h5>{{tests}}</h5>
-  <AppTestCard/>
+<div id="mainContainer">
+  <div id="testsContainer" v-for="test in tests" :key="test">
+    <AppTestCard v-bind:test='test'/>
+  </div>
 </div>
 </template>
 
@@ -39,11 +40,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#testsContainer{
+#mainContainer{
+  border: 1px solid red;
   max-width: 840px;
-
   margin: 0 auto;
-  padding: 0 2rem;
+
+  padding: 0 auto;
 
   display: flex;
   flex-wrap: wrap;
@@ -51,6 +53,18 @@ export default {
 
   @media (min-width: 768px) {
     justify-content: space-around;
-    }
+  }
+
+  #testsContainer{
+    margin-right: 2rem;
+    margin-left: 2rem;
+
+    margin-top: 30px;
+
+    // &:last-child{
+    //   margin-bottom: 60px;
+    // }
+  }
 }
+
 </style>
