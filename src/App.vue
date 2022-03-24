@@ -37,6 +37,10 @@ export default {
   button{
     cursor: pointer;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     transition: filter 0.5s;
 
     &:hover{
