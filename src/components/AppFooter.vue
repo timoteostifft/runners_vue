@@ -96,6 +96,10 @@ export default {
       margin-top: 12px;
       color: #3a628d;
 
+      @media (max-width: 843px) {
+        margin-bottom: 30px;
+      }
+
       p{
         font-size: 16.5px;
         font-weight: 400;
