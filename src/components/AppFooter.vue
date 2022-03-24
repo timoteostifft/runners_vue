@@ -53,6 +53,7 @@ export default {
 #container{
   width: 100%;
 
+  margin-top:60px;
   height: 100%;
   background: #e7eaee;
   border-top: 3px solid #3a628d;
