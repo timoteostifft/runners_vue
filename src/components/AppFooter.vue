@@ -83,6 +83,8 @@ export default {
       border-bottom: 1.5px solid #3a628d;
       color: #3a628d;
 
+      height: 18px;
+
       h3{
         font-size: 16.5px;
         font-weight: 600;
