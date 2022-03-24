@@ -87,7 +87,6 @@ export default {
         background: #E52e4d;
 
         img{
-          margin: 0 auto;
           height: 18px;
           width: auto;
         }
@@ -97,7 +96,6 @@ export default {
         background: #46568f;
 
         img{
-          margin: 0 auto;
           height: 16px;
           width: auto;
         }
@@ -107,7 +105,6 @@ export default {
         background: #25bb75;
 
         img{
-          margin: 0 auto;
           height: 18px;
           width: auto;
         }
