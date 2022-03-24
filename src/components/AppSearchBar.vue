@@ -3,7 +3,11 @@
   <div id="content">
     <div id='searchArea'>
       <img alt="App logo" src="../assets/searchIcon.png">
-      Pesquise aqui
+      <form action="">
+        <label for="search">
+          <input type="text" id="search" name="search" placeholder="Pesquise aqui">
+        </label>
+      </form>
     </div>
     <button id="filter">
       <img alt="Filter Image" src="../assets/filterIcon.png">
@@ -55,6 +59,26 @@ export default {
         width: auto;
 
         margin-right: 0.5rem;
+      }
+
+      form{
+        width: 100%;
+        margin-right: 10px;
+
+        input{
+          width: 100%;
+          color: #3a628d;
+          font-weight: 600;
+          font-size: 16.5px;
+
+          &::placeholder {
+            opacity: 0.85;
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
       }
     }
 
