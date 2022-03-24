@@ -51,10 +51,12 @@ export default {
 
 <style scoped lang="scss">
 #container{
+  position: absolute;
+  bottom: 0;
+
   width: 100%;
 
   margin-top:60px;
-  height: 100%;
   background: #e7eaee;
   border-top: 3px solid #3a628d;
   box-shadow: rgba(0, 0, 0, 0.4) 0px -5px 20px 0px;
@@ -63,7 +65,7 @@ export default {
     height: 100%;
     max-width: 1120px;
 
-    padding: 1rem 2rem;
+    padding: 2rem 2rem;
     margin: 0 auto;
 
     @media (min-width: 844px) {

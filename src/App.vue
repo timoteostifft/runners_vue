@@ -31,7 +31,7 @@ export default {
 <style lang="scss">
 #app {
   font-family: 'Poppins', sans-serif;
-  height: 100%;
+  min-height: 100vh;
   background: #2e4c6d;
 
   button{
