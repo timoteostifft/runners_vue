@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import api from '../api';
+import api from '../plugins/api';
 import AppTestCard from './AppTestCard.vue';
 
 export default {
