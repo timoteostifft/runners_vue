@@ -30,6 +30,7 @@ export default {
       margin-bottom: -40px;
 
       h1{
+        margin-top: -4px;
         color: #e7eaee;
 
         span{
