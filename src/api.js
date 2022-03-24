@@ -1,4 +1,4 @@
-/* eslint-disable quotes */
+/* eslint-disable */
 import axios from "axios";
 
 const api = axios.create({
