@@ -51,8 +51,6 @@ export default {
 
 <style scoped lang="scss">
 #container{
-  position: absolute;
-  bottom: 0;
 
   width: 100%;
 
