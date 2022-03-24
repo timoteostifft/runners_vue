@@ -41,7 +41,6 @@ export default {
 
 <style scoped lang="scss">
 #mainContainer{
-  border: 1px solid red;
   max-width: 840px;
   margin: 0 auto;
 
