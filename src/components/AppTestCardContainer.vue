@@ -1,7 +1,7 @@
 <template>
 <div id="mainContainer">
-  <div id="testsContainer" v-for="test in tests" :key="test">
-    <AppTestCard v-bind:test='test'/>
+  <div id="testsContainer" v-for="test in tests" :key="test.id">
+    <AppTestCard v-bind:test='test' @delete='getTests'/>
   </div>
 </div>
 </template>
