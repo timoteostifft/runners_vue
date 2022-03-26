@@ -8,7 +8,8 @@
         <div id="info">
           <p>
             Av. Independência, 1299 -
-            <br> sala 502 - Independência
+            <br />
+            sala 502 - Independência
           </p>
         </div>
       </div>
@@ -18,9 +19,7 @@
         </div>
         <div id="info">
           <a href="tel:(51)3024-7129">(51) 3024-7129</a> <br />
-            <a href="mailto:atendimento@deliverit.com.br">
-              atendimento@deliverit.com.br
-            </a>
+          <a href="mailto:atendimento@deliverit.com.br"> atendimento@deliverit.com.br </a>
         </div>
       </div>
       <div id="content">
@@ -29,13 +28,13 @@
         </div>
         <div id="info">
           <a href="https://www.facebook.com/deliverit.brasil/">
-            <img alt="Facebook logo" src="../assets/facebookIcon.png">
+            <img alt="Facebook logo" src="../assets/facebookIcon.png" />
           </a>
           <a href="https://www.instagram.com/deliverit.brasil/">
-            <img alt="Instagram logo" src="../assets/instagramIcon.png">
+            <img alt="Instagram logo" src="../assets/instagramIcon.png" />
           </a>
           <a href="https://twitter.com/">
-            <img alt="Instagram logoTwitter" src="../assets/twitterIcon.png">
+            <img alt="Instagram logoTwitter" src="../assets/twitterIcon.png" />
           </a>
         </div>
       </div>
@@ -50,16 +49,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#container{
-
+#container {
   width: 100%;
 
-  margin-top:60px;
+  margin-top: 60px;
   background: #e7eaee;
   border-top: 3px solid #3a628d;
   box-shadow: rgba(0, 0, 0, 0.4) 0px -5px 20px 0px;
 
-  #background{
+  #background {
     height: 100%;
     max-width: 1120px;
 
@@ -73,26 +71,26 @@ export default {
     }
 
     @media (max-width: 843px) {
-      br{
+      br {
         display: none;
       }
     }
 
-    #title{
+    #title {
       display: inline-block;
       border-bottom: 1.5px solid #3a628d;
       color: #3a628d;
 
       height: 18px;
 
-      h3{
+      h3 {
         font-size: 16.5px;
         font-weight: 600;
         line-height: 10px;
       }
     }
 
-    #info{
+    #info {
       margin-top: 12px;
       color: #3a628d;
 
@@ -100,17 +98,17 @@ export default {
         margin-bottom: 30px;
       }
 
-      p{
+      p {
         font-size: 16.5px;
         font-weight: 400;
       }
 
-      a{
+      a {
         font-size: 16.5px;
         text-decoration: none;
         color: #3a628d;
 
-        img{
+        img {
           height: 2rem;
           width: auto;
           margin-right: 10px;
@@ -119,5 +117,4 @@ export default {
     }
   }
 }
-
 </style>

@@ -1,19 +1,19 @@
 <template>
-<div id="container">
-  <div id="content">
-    <div id='searchArea'>
-      <img alt="App logo" src="../assets/searchIcon.png">
-      <form action="">
-        <label for="search">
-          <input type="text" id="search" name="search" placeholder="Pesquise aqui">
-        </label>
-      </form>
+  <div id="container">
+    <div id="content">
+      <div id="searchArea">
+        <img alt="App logo" src="../assets/searchIcon.png" />
+        <form action="">
+          <label for="search">
+            <input type="text" id="search" name="search" placeholder="Pesquise aqui" />
+          </label>
+        </form>
+      </div>
+      <button id="filter">
+        <img alt="Filter Image" src="../assets/filterIcon.png" />
+      </button>
     </div>
-    <button id="filter">
-      <img alt="Filter Image" src="../assets/filterIcon.png">
-    </button>
   </div>
-</div>
 </template>
 
 <script>
@@ -23,8 +23,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-#container{
+#container {
   display: flex;
   align-items: center;
 
@@ -33,7 +32,7 @@ export default {
 
   margin: 4rem auto;
 
-  #content{
+  #content {
     display: flex;
     align-items: center;
     width: 100%;
@@ -41,7 +40,7 @@ export default {
 
     padding: 0 1rem;
 
-    #searchArea{
+    #searchArea {
       display: flex;
       align-items: center;
 
@@ -53,7 +52,7 @@ export default {
       border-radius: 12rem 3rem 3rem 12rem;
       box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 20px 0px;
 
-      img{
+      img {
         margin-left: -2.2px;
         height: 2.5rem;
         width: auto;
@@ -61,11 +60,11 @@ export default {
         margin-right: 0.5rem;
       }
 
-      form{
+      form {
         width: 100%;
         margin-right: 10px;
 
-        input{
+        input {
           width: 100%;
           color: #3a628d;
           font-weight: 600;
@@ -82,7 +81,7 @@ export default {
       }
     }
 
-    #filter{
+    #filter {
       height: 3rem;
       width: 3rem;
 
@@ -97,7 +96,7 @@ export default {
 
       cursor: pointer;
 
-      img{
+      img {
         height: 50%;
         width: auto;
       }

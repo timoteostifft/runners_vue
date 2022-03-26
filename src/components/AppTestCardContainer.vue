@@ -1,9 +1,9 @@
 <template>
-<div id="mainContainer">
-  <div id="testsContainer" v-for="test in tests" :key="test.id">
-    <AppTestCard v-bind:test='test' @delete='getTests'/>
+  <div id="mainContainer">
+    <div id="testsContainer" v-for="test in tests" :key="test.id">
+      <AppTestCard v-bind:test="test" @delete="getTests" />
+    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#mainContainer{
+#mainContainer {
   max-width: 840px;
   margin: 0 auto;
 
@@ -54,7 +54,7 @@ export default {
     justify-content: space-around;
   }
 
-  #testsContainer{
+  #testsContainer {
     margin-right: 2rem;
     margin-left: 2rem;
 
@@ -65,5 +65,4 @@ export default {
     // }
   }
 }
-
 </style>
