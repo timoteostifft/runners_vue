@@ -7,7 +7,7 @@
     <p>Participantes: <span>{{test.runners.length}}</span></p>
   </div>
   <nav>
-    <button id="removeButton">
+    <button id="removeButton" v-on:click='remove(test.id)'>
       <img alt="Remove Icon" src="../assets/removeIcon.png">
     </button>
     <button id="listButton">
@@ -21,9 +21,24 @@
 </template>
 
 <script>
+import api from '../plugins/api';
+
 export default {
   name: 'AppTestCard',
   props: ['test'],
+  methods: {
+    remove(id) {
+      api
+        .delete(`/tests/remove/${id}`)
+        .then((response) => {
+          this.$emit('delete');
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
 };
 </script>
 
