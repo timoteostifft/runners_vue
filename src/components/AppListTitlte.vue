@@ -3,15 +3,32 @@
     <div id="content">
       <h1>Listagem de <br /><span>Corridas</span></h1>
     </div>
-    <button>
+    <button type="button" @click='handleUseModal'>
       <img alt="Register Icon" src="../assets/addIcon.png" />
     </button>
+
+    <AppTestForm v-show='isModalVisible' @close='handleUseModal'/>
   </div>
 </template>
 
 <script>
+import AppTestForm from './AppTestForm.vue';
+
 export default {
   name: 'AppListTitle',
+  components: {
+    AppTestForm,
+  },
+  data() {
+    return {
+      isModalVisible: false,
+    };
+  },
+  methods: {
+    handleUseModal() {
+      this.isModalVisible = !this.isModalVisible;
+    },
+  },
 };
 </script>
 
