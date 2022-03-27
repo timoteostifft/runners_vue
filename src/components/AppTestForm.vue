@@ -10,12 +10,12 @@
       <form action="">
         <label for="date">
           Data:
-          <input type="date" name='date' id='date'>
+          <input type="date" name='date' id='date' required v-model='form.date'>
         </label>
 
         <label for="type">
           Distância:
-          <select name="type" id='type'>
+          <select name="type" id='type' v-model='form.type'>
             <option value="3">3</option>
             <option value="5">5</option>
             <option value="10">10</option>
@@ -30,7 +30,7 @@
         <button @click="close">
           SAIR
         </button>
-        <button type="submit">
+        <button type="submit" @click='addTest'>
           CADASTRAR
         </button>
       </div>
@@ -39,11 +39,34 @@
 </template>
 
 <script>
+import api from '../plugins/api';
+
 export default {
   name: 'AppTestForm',
+  data() {
+    return {
+      form: {
+        date: '',
+        type: '',
+      },
+    };
+  },
   methods: {
     close() {
       this.$emit('close');
+    },
+    addTest() {
+      console.log(this.form.date, this.form.type);
+      api
+        .post('/tests/add', this.form)
+        .then((response) => {
+          this.tests = response.data;
+          this.close();
+        })
+        .catch((error) => {
+          // eslint-disable-next-line no-console
+          console.log(error);
+        });
     },
   },
 };
