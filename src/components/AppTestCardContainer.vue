@@ -35,8 +35,8 @@ export default {
     this.getTests();
   },
   methods: {
-    getTests() {
-      api
+    async getTests() {
+      await api
         .get('/tests/listByResult')
         .then((response) => {
           this.tests = response.data;
@@ -48,18 +48,17 @@ export default {
     },
     handleUseModal() {
       this.isModalVisible = !this.isModalVisible;
-      this.getTests();
     },
-    register(data) {
-      api
-        .delete('/tests/add/', data)
+    async register(data) {
+      await api
+        .post('/tests/add/', data)
         .then((response) => {
           console.log(response.status);
         })
         .catch((error) => {
           console.log(error);
         });
-
+      this.getTests();
       this.handleUseModal();
     },
   },
