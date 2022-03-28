@@ -19,34 +19,40 @@
       <button id="listButton" @click='handleUseModal'>
         <img alt="List Icon" src="../assets/listIcon.png"/>
       </button>
-      <button id="addButton">
+      <button id="addButton" @onclick='handleUseForm'>
         <img alt="Register Icon" src="../assets/addIcon.png"/>
       </button>
     </nav>
 
     <AppRunnerCard v-show='isModalVisible' @close='handleUseModal' v-bind:test="test"/>
+    <AppRunnerForm v-show='isFormVisible' @cancel='handleUseForm' @submit='register'/>
   </div>
 </template>
 
 <script>
 import api from '../plugins/api';
-// import AppRunnerForm from './AppRunnerForm.vue';
+import AppRunnerForm from './AppRunnerForm.vue';
 import AppRunnerCard from './AppRunnerCard.vue';
 
 export default {
   name: 'AppTestCard',
   components: {
     AppRunnerCard,
+    AppRunnerForm,
   },
   data() {
     return {
       isModalVisible: false,
+      isFormVisible: false,
     };
   },
   props: ['test'],
   methods: {
     handleUseModal() {
       this.isModalVisible = !this.isModalVisible;
+    },
+    handleUseForm() {
+      this.isFormVisible = !this.isFormVisible;
     },
     remove(id) {
       api
@@ -58,6 +64,9 @@ export default {
         .catch((error) => {
           console.log(error);
         });
+    },
+    register(data) {
+      console.log(data.name);
     },
   },
 };
