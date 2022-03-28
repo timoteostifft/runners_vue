@@ -16,22 +16,22 @@
       <button id="removeButton" v-on:click="remove(test.id)">
         <img alt="Remove Icon" src="../assets/removeIcon.png" />
       </button>
-      <button id="listButton" @open='handleUseModal'>
-        <img alt="List Icon" src="../assets/listIcon.png" />
+      <button id="listButton" @click='handleUseModal'>
+        <img alt="List Icon" src="../assets/listIcon.png"/>
       </button>
-      <button id="addButton" >
-        <img alt="Register Icon" src="../assets/addIcon.png" />
+      <button id="addButton">
+        <img alt="Register Icon" src="../assets/addIcon.png"/>
       </button>
     </nav>
 
-    <AppRunnerCard v-show='isModalVisible' @close='handleUseModal'/>
+    <AppRunnerCard v-show='isModalVisible' @close='handleUseModal' v-bind:test="test"/>
   </div>
 </template>
 
 <script>
 import api from '../plugins/api';
 // import AppRunnerForm from './AppRunnerForm.vue';
-import AppRunnerCard from './AppRunnerForm.vue';
+import AppRunnerCard from './AppRunnerCard.vue';
 
 export default {
   name: 'AppTestCard',
