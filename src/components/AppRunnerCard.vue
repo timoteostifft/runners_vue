@@ -1,7 +1,12 @@
 <template>
   <div class='modal-backdrop'>
     <div class='modal'>
-
+       <div id='header'>
+        <h3>Listagem de Corredores</h3>
+        <button @click="close">
+          <img alt="Remove Icon" src="../assets/removeIcon.png" />
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -9,6 +14,12 @@
 <script>
 export default {
   name: 'AppRunnerForm',
+  props: ['test'],
+  methods: {
+    close() {
+      this.$emit('close');
+    },
+  },
 };
 </script>
 
@@ -26,7 +37,6 @@ export default {
     align-items: center;
 
     .modal {
-      height: 2rem;
       width: 30rem;
       padding: 1.5rem;
 
