@@ -19,7 +19,7 @@
       <button id="listButton" @click='handleUseModal'>
         <img alt="List Icon" src="../assets/listIcon.png"/>
       </button>
-      <button id="addButton" @onclick='handleUseForm'>
+      <button id="addButton" @click='handleUseForm'>
         <img alt="Register Icon" src="../assets/addIcon.png"/>
       </button>
     </nav>
@@ -65,8 +65,27 @@ export default {
           console.log(error);
         });
     },
-    register(data) {
-      console.log(data.name);
+    async register(data) {
+      await api
+        .post('/runners/add/', data)
+        .then((response) => {
+          console.log(response.status);
+          this.insertInto(this.test.id, response.data.id);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      this.handleUseForm();
+    },
+    async insertInto(testId, runnerId) {
+      await api
+        .post(`/tests/add/${testId}/${runnerId}`)
+        .then((response) => {
+          console.log(response.status);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 };

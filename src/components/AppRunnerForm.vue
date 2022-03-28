@@ -9,26 +9,26 @@
       </div>
       <form action="">
         <label for="name">
-            Nome:
+          Nome:
           <input type="text" name='name' id='name' required v-model='form.name'>
         </label>
 
         <label for="birth">
           Data de Nascimento:
-          <input type="date" name='name' id='name' required v-model='form.birth'>
+          <input type="date" name='birth' id='birth' required v-model='form.birth'>
         </label>
 
         <label for="cpf">
-          Data de Nascimento:
+          CPF:
           <input type="number" name='cpf' id='cpf' required v-model='form.cpf'>
         </label>
       </form>
 
       <div id="footer">
-        <button @click="close">
+        <button @click="cancel">
           CANCELAR
         </button>
-        <button type="submit" @click='cancel'>
+        <button type="submit" @click='submit'>
           CADASTRAR
         </button>
       </div>
@@ -43,14 +43,14 @@ export default {
     return {
       form: {
         name: String,
-        birth: String,
         cpf: String,
+        birth: String,
       },
     };
   },
   methods: {
-    close() {
-      this.$emit('close');
+    cancel() {
+      this.$emit('cancel');
     },
     submit() {
       this.$emit('submit', this.form);
