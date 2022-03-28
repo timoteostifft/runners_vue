@@ -30,7 +30,7 @@
         <button @click="close">
           SAIR
         </button>
-        <button type="submit" @click='addTest'>
+        <button type="submit" @click='submit'>
           CADASTRAR
         </button>
       </div>
@@ -39,7 +39,6 @@
 </template>
 
 <script>
-import api from '../plugins/api';
 
 export default {
   name: 'AppTestForm',
@@ -55,18 +54,8 @@ export default {
     close() {
       this.$emit('close');
     },
-    addTest() {
-      console.log(this.form.date, this.form.type);
-      api
-        .post('/tests/add', this.form)
-        .then((response) => {
-          this.tests = response.data;
-          this.close();
-        })
-        .catch((error) => {
-          // eslint-disable-next-line no-console
-          console.log(error);
-        });
+    submit() {
+      this.$emit('submit', this.form);
     },
   },
 };
