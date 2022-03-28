@@ -27,10 +27,10 @@ export default {
   display: flex;
   align-items: center;
 
-  max-width: 820px;
+  max-width: 840px;
   width: 100%;
 
-  margin: 4rem auto;
+  margin: 4rem auto 0;
 
   #content {
     display: flex;
