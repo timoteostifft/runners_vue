@@ -16,23 +16,38 @@
       <button id="removeButton" v-on:click="remove(test.id)">
         <img alt="Remove Icon" src="../assets/removeIcon.png" />
       </button>
-      <button id="listButton">
+      <button id="listButton" @open='handleUseModal'>
         <img alt="List Icon" src="../assets/listIcon.png" />
       </button>
-      <button id="addButton">
+      <button id="addButton" >
         <img alt="Register Icon" src="../assets/addIcon.png" />
       </button>
     </nav>
+
+    <AppRunnerCard v-show='isModalVisible' @close='handleUseModal'/>
   </div>
 </template>
 
 <script>
 import api from '../plugins/api';
+// import AppRunnerForm from './AppRunnerForm.vue';
+import AppRunnerCard from './AppRunnerForm.vue';
 
 export default {
   name: 'AppTestCard',
+  components: {
+    AppRunnerCard,
+  },
+  data() {
+    return {
+      isModalVisible: false,
+    };
+  },
   props: ['test'],
   methods: {
+    handleUseModal() {
+      this.isModalVisible = !this.isModalVisible;
+    },
     remove(id) {
       api
         .delete(`/tests/remove/${id}`)
