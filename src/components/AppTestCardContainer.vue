@@ -8,7 +8,7 @@
 
       <AppTestForm v-show='isModalVisible' @close='handleUseModal' @submit='register'/>
     </header>
-    <div id="testsContainer" v-for="test in tests" :key="test.id">
+    <div id="testsContainer" v-for="test in tests" :key="test.id" @add='getTests'>
       <AppTestCard v-bind:test="test" @delete="getTests"/>
     </div>
   </div>

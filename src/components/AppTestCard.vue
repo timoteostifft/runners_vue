@@ -71,11 +71,12 @@ export default {
         .then((response) => {
           console.log(response.status);
           this.insertInto(this.test.id, response.data.id);
+          this.$emit('add');
+          this.handleUseForm();
         })
         .catch((error) => {
           console.log(error);
         });
-      this.handleUseForm();
     },
     async insertInto(testId, runnerId) {
       await api
