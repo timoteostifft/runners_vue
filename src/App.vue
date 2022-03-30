@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <AppHeader/>
+    <AppHeader v-bind:runners='runners' @reload='getRunners'/>
     <AppSearchbar @select='apllyFilter'/>
     <!-- <AppTestCardContainer v-bind:listBy="listBy"/> -->
     <AppFooter/>
@@ -8,41 +8,55 @@
 </template>
 
 <script>
-/* eslint-disable */
 import AppHeader from './components/header/AppHeader.vue';
 import AppSearchbar from './components/main/searchbar/AppSearchBar.vue';
 import AppTestCardContainer from './components/AppTestCardContainer.vue';
-import AppFooter from './components/footer/AppFooter.vue'
+import AppFooter from './components/footer/AppFooter.vue';
+import api from './plugins/api';
 
 export default {
   name: 'App',
   components: {
     AppHeader,
     AppSearchbar,
+    // eslint-disable-next-line vue/no-unused-components
     AppTestCardContainer,
     AppFooter,
   },
-  data (){
+  data() {
     return {
       listBy: 'result',
+      runners: [],
     };
   },
   methods: {
-    apllyFilter(listBy){
+    apllyFilter(listBy) {
       this.listBy = listBy;
       console.log(listBy);
-    }
-  }
-}
+    },
+    async getRunners() {
+      await api
+        .get('/runners/list/')
+        .then((response) => {
+          this.runners = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+};
 </script>
 
 <style lang="scss">
 #app {
+  z-index: 0;
   font-family: 'Poppins', sans-serif;
   min-height: 100%;
   background: #2e4c6d;
 
   .modal-backdrop {
+    z-index: 1;
     position: fixed;
     top: 0;
     bottom: 0;
