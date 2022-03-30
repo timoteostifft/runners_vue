@@ -47,14 +47,16 @@ export default {
     color: white;
     padding: 0.8rem;
     border-radius: 12px;
-    width: 8.5rem;
+    width: 100%;
   }
 
   :nth-child(1){
+    margin-right: 1rem;
     background: #46568f;
   }
 
   :nth-child(2){
+    margin-left: 1rem;
     background: #25bb75;
   }
 }
