@@ -51,12 +51,12 @@ export default {
   }
 
   :nth-child(1){
-    margin-right: 1rem;
+    margin-right: 0.5rem;
     background: #46568f;
   }
 
   :nth-child(2){
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     background: #25bb75;
   }
 }
