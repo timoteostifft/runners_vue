@@ -1,6 +1,6 @@
 <template>
   <div id="content">
-    <img id="mainImage" alt="App logo" src="../assets/runner.png" />
+    <img id="mainImage" alt="App logo" src="../../../assets/runner.png" />
     <div id="info">
       <p>
         Data: <span>{{ test.date }}</span>
@@ -14,13 +14,13 @@
     </div>
     <nav>
       <button id="removeButton" v-on:click="remove(test.id)">
-        <img alt="Remove Icon" src="../assets/removeIcon.png" />
+        <img alt="Remove Icon" src="../../../assets/removeIcon.png" />
       </button>
       <button id="listButton" @click='handleUseModal'>
-        <img alt="List Icon" src="../assets/listIcon.png"/>
+        <img alt="List Icon" src="../../../assets/listIcon.png"/>
       </button>
       <button id="addButton" @click='handleUseForm'>
-        <img alt="Register Icon" src="../assets/addIcon.png"/>
+        <img alt="Register Icon" src="../../../assets/addIcon.png"/>
       </button>
     </nav>
 
@@ -30,9 +30,9 @@
 </template>
 
 <script>
-import api from '../plugins/api';
-import AppRunnerForm from './AppRunnerForm.vue';
-import AppRunnerCard from './AppRunnerCard.vue';
+import api from '../../../plugins/api';
+import AppRunnerForm from '../../AppRunnerForm.vue';
+import AppRunnerCard from '../../AppRunnerCard.vue';
 
 export default {
   name: 'AppTestCard',
@@ -53,17 +53,6 @@ export default {
     },
     handleUseForm() {
       this.isFormVisible = !this.isFormVisible;
-    },
-    remove(id) {
-      api
-        .delete(`/tests/remove/${id}`)
-        .then((response) => {
-          this.$emit('delete');
-          console.log(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
     },
     async register(data) {
       await api

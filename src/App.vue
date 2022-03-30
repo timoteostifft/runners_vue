@@ -2,7 +2,10 @@
   <div id="app">
     <AppHeader v-bind:runners='runners' @reload='getRunners'/>
     <AppSearchbar @select='apllyFilter'/>
-    <!-- <AppTestCardContainer v-bind:listBy="listBy"/> -->
+    <AppTestCardContainer
+      v-bind:tests="tests"
+      v-bind:runners="runners"
+      @reload='getTests'/>
     <AppFooter/>
   </div>
 </template>
@@ -10,7 +13,7 @@
 <script>
 import AppHeader from './components/header/AppHeader.vue';
 import AppSearchbar from './components/main/searchbar/AppSearchBar.vue';
-import AppTestCardContainer from './components/AppTestCardContainer.vue';
+import AppTestCardContainer from './components/main/testsContainer/AppTestCardContainer.vue';
 import AppFooter from './components/footer/AppFooter.vue';
 import api from './plugins/api';
 
@@ -27,6 +30,27 @@ export default {
     return {
       listBy: 'result',
       runners: [],
+      tests: [{
+        id: 1,
+        type: 21,
+        date: '2022-03-11',
+        runners: [
+          {
+            id: 5,
+            name: 'Bruno',
+            cpf: '43156782145',
+            birth: '1998-12-03',
+            time: null,
+          },
+          {
+            id: 4,
+            name: 'Bianca',
+            cpf: '12345678900',
+            birth: '2001-02-20',
+            time: '00:30:00',
+          },
+        ],
+      }],
     };
   },
   created() {
@@ -35,7 +59,7 @@ export default {
   methods: {
     apllyFilter(listBy) {
       this.listBy = listBy;
-      console.log(listBy);
+      this.getTests(this.listBy);
     },
     async getRunners() {
       await api
@@ -46,6 +70,18 @@ export default {
         .catch((error) => {
           console.log(error);
         });
+    },
+    async getTests() {
+      switch (this.listBy) {
+        case 'result':
+          console.log(this.listBy);
+          break;
+        case 'age':
+          console.log(this.listBy);
+          break;
+        default:
+          console.log(this.listBy);
+      }
     },
   },
 };

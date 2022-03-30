@@ -3,80 +3,40 @@
     <header>
       <h1>Listagem de <br /><span>Corridas</span></h1>
       <button type="button" @click='handleUseModal'>
-        <img alt="Register Icon" src="../assets/addIcon.png" />
+        <img alt="Register Icon" src="../../../assets/addIcon.png" />
       </button>
 
       <AppTestForm v-show='isModalVisible' @close='handleUseModal' @submit='register'/>
     </header>
-    <div id="testsContainer" v-for="test in tests" :key="test.id" @add='getTests'>
-      <AppTestCard v-bind:test="test" @delete="getTests"/>
-    </div>
+    <!-- <div id="testsContainer" v-for="test in tests" :key="test.id">
+      <AppTestCard v-bind:test="test"/>
+    </div> -->
   </div>
 </template>
 
 <script>
-import api from '../plugins/api';
-import AppTestCard from './AppTestCard.vue';
+// import api from '../../../plugins/api';
+// import AppTestCard from './AppTestCard.vue';
 import AppTestForm from './AppTestForm.vue';
 
 export default {
   name: 'App',
   components: {
-    AppTestCard,
+    // AppTestCard,
     AppTestForm,
   },
   data() {
     return {
-      tests: [],
       isModalVisible: false,
     };
   },
-  props: ['listBy'],
-  created() {
-    this.getTests(this.listBy);
-  },
+  props: ['tests'],
   methods: {
-    async getTests(listBy) {
-      if (listBy === 'result') {
-        await api
-          .get('/tests/listByResult')
-          .then((response) => {
-            this.tests = response.data;
-            console.log(this.tests);
-          })
-          .catch((error) => {
-            // eslint-disable-next-line no-console
-            console.log(error);
-          });
-      }
-
-      if (listBy === 'age') {
-        await api
-          .get('/tests/listByAge')
-          .then((response) => {
-            this.tests = response.data;
-            console.log(this.tests);
-          })
-          .catch((error) => {
-            // eslint-disable-next-line no-console
-            console.log(error);
-          });
-      }
-    },
     handleUseModal() {
       this.isModalVisible = !this.isModalVisible;
     },
-    async register(data) {
-      await api
-        .post('/tests/add/', data)
-        .then((response) => {
-          console.log(response.status);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-      this.getTests(this.listBy);
-      this.handleUseModal();
+    register(data) {
+      console.log('Cadastro', data);
     },
   },
 };

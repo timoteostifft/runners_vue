@@ -4,7 +4,7 @@
       <div id='header'>
         <h3>Cadastro de Corridas</h3>
         <button @click="close">
-          <img alt="Remove Icon" src="../assets/removeIcon.png" />
+          <img alt="Remove Icon" src="../../../assets/removeIcon.png" />
         </button>
       </div>
       <form action="">
@@ -56,6 +56,7 @@ export default {
     },
     submit() {
       this.$emit('submit', this.form);
+      this.close();
     },
   },
 };
