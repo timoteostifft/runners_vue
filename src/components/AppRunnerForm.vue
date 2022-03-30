@@ -7,22 +7,6 @@
           <img alt="Remove Icon" src="../assets/removeIcon.png" />
         </button>
       </div>
-      <form action="">
-        <label for="name">
-            Nome:
-          <input type="text" name='name' id='name' required v-model='form.name'>
-        </label>
-
-        <label for="birth">
-          Data de Nascimento:
-          <input type="date" name='name' id='name' required v-model='form.birth'>
-        </label>
-
-        <label for="cpf">
-          Data de Nascimento:
-          <input type="number" name='cpf' id='cpf' required v-model='form.cpf'>
-        </label>
-      </form>
 
       <div id="footer">
         <button @click="close">
