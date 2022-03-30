@@ -1,18 +1,18 @@
 <template>
   <div id="app">
     <AppHeader/>
-    <AppSearchbar @select='filter'/>
-    <AppTestCardContainer v-bind:listBy="listBy"/>
+    <AppSearchbar @select='apllyFilter'/>
+    <!-- <AppTestCardContainer v-bind:listBy="listBy"/> -->
     <AppFooter/>
   </div>
 </template>
 
 <script>
 /* eslint-disable */
-import AppHeader from './components/AppHeader.vue';
-import AppSearchbar from './components/AppSearchBar.vue';
+import AppHeader from './components/header/AppHeader.vue';
+import AppSearchbar from './components/main/searchbar/AppSearchBar.vue';
 import AppTestCardContainer from './components/AppTestCardContainer.vue';
-import AppFooter from './components/AppFooter.vue'
+import AppFooter from './components/footer/AppFooter.vue'
 
 export default {
   name: 'App',
@@ -28,7 +28,7 @@ export default {
     };
   },
   methods: {
-    filter(listBy){
+    apllyFilter(listBy){
       this.listBy = listBy;
       console.log(listBy);
     }
@@ -39,8 +39,30 @@ export default {
 <style lang="scss">
 #app {
   font-family: 'Poppins', sans-serif;
-  min-height: 100vh;
+  min-height: 100%;
   background: #2e4c6d;
+
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal {
+      width: 30rem;
+      padding: 1.5rem;
+
+      background: #FFFFFF;
+      box-shadow: rgba(0, 0, 0, 0.6) 0px 10px 20px 0px;
+
+      color: #3a628d;
+    }
+  }
 
   button{
     cursor: pointer;
