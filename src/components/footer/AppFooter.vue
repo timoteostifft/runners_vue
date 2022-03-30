@@ -28,13 +28,13 @@
         </div>
         <div id="info">
           <a href="https://www.facebook.com/deliverit.brasil/">
-            <img alt="Facebook logo" src="../assets/facebookIcon.png" />
+            <img alt="Facebook logo" src="../../assets/facebookIcon.png" />
           </a>
           <a href="https://www.instagram.com/deliverit.brasil/">
-            <img alt="Instagram logo" src="../assets/instagramIcon.png" />
+            <img alt="Instagram logo" src="../../assets/instagramIcon.png" />
           </a>
           <a href="https://twitter.com/">
-            <img alt="Instagram logoTwitter" src="../assets/twitterIcon.png" />
+            <img alt="Instagram logoTwitter" src="../../assets/twitterIcon.png" />
           </a>
         </div>
       </div>

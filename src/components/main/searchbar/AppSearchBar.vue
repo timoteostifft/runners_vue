@@ -2,7 +2,7 @@
   <div id="container">
     <div id="content">
       <div id="searchArea">
-        <img alt="App logo" src="../assets/searchIcon.png" />
+        <img alt="App logo" src="../../../assets/searchIcon.png" />
         <form action="">
           <label for="search">
             <input type="text" id="search" name="search" placeholder="Pesquise aqui" />
@@ -10,7 +10,7 @@
         </form>
       </div>
       <button id="filter" @click='handleUseModal'>
-        <img alt="Filter Image" src="../assets/filterIcon.png" />
+        <img alt="Filter Image" src="../../../assets/filterIcon.png" />
       </button>
     </div>
 
@@ -43,28 +43,30 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#container {
+#container{
+  width: 100%;
+  max-width: 840px;
+
   display: flex;
   align-items: center;
-
-  max-width: 840px;
-  width: 100%;
-
   margin: 4rem auto 0;
 
-  #content {
-    display: flex;
-    align-items: center;
+  padding: 0 1rem;
+
+  #content{
     width: 100%;
-    height: 3rem;
 
-    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-    #searchArea {
-      display: flex;
-      align-items: center;
-
+    #searchArea{
+      height: 42px;
       width: 100%;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
       margin-right: 0.5rem;
 
       border: 3px solid #3a628d;
@@ -80,17 +82,15 @@ export default {
         margin-right: 0.5rem;
       }
 
-      form {
-        width: 100%;
-        margin-right: 10px;
+      form{
+        margin: auto 0;
 
-        input {
-          width: 100%;
-          color: #3a628d;
+        input{
           font-weight: 600;
-          font-size: 16.5px;
+          font-size: 14.5px;
 
           &::placeholder {
+            color: #3a628d;
             opacity: 0.85;
           }
 
@@ -101,20 +101,14 @@ export default {
       }
     }
 
-    #filter {
-      height: 3rem;
-      width: 3rem;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    #filter{
+      height: 42px;
+      width: 42px;
 
       background: #e7eaee;
       border-radius: 10px;
       box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 20px 0px;
       border: 3px solid #3a628d;
-
-      cursor: pointer;
 
       img {
         height: 50%;
