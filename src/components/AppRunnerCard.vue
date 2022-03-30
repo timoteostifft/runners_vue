@@ -10,7 +10,7 @@
       <div id='container' v-for='runner in test.runners' :key='runner.id'>
         <div>
           <p>Nome: {{runner.name}}</p>
-          <p>Nascimento: {{runner.time}}</p>
+          <p>Idade: {{runner.age}}</p>
           <p>CPF: {{runner.cpf}}</p>
           <p>Tempo: {{runner.time}}</p>
         </div>
@@ -18,7 +18,7 @@
           <button @click='remove(test.id, runner)'>
             <img alt="Remove Icon" src="../assets/removeIcon.png" />
           </button>
-          <button>
+          <button @oclick='edit()'>
             E
           </button>
         </nav>
