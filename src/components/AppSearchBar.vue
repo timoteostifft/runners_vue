@@ -9,16 +9,36 @@
           </label>
         </form>
       </div>
-      <button id="filter">
+      <button id="filter" @click='handleUseModal'>
         <img alt="Filter Image" src="../assets/filterIcon.png" />
       </button>
     </div>
+
+    <AppFilterModal v-show='isModalVisible' @close='handleUseModal' @select='select'/>
   </div>
 </template>
 
 <script>
+import AppFilterModal from './AppFilterModal.vue';
+
 export default {
   name: 'AppSearchbar',
+  components: {
+    AppFilterModal,
+  },
+  data() {
+    return {
+      isModalVisible: false,
+    };
+  },
+  methods: {
+    select(value) {
+      this.$emit('select', value);
+    },
+    handleUseModal() {
+      this.isModalVisible = !this.isModalVisible;
+    },
+  },
 };
 </script>
 
