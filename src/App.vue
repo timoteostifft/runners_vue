@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <AppHeader/>
-    <AppSearchbar/>
-    <AppTestCardContainer/>
+    <AppSearchbar @select='filter'/>
+    <AppTestCardContainer v-bind:listBy="listBy"/>
     <AppFooter/>
   </div>
 </template>
@@ -22,6 +22,17 @@ export default {
     AppTestCardContainer,
     AppFooter,
   },
+  data (){
+    return {
+      listBy: 'result',
+    };
+  },
+  methods: {
+    filter(listBy){
+      this.listBy = listBy;
+      console.log(listBy);
+    }
+  }
 }
 </script>
 
