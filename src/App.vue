@@ -53,10 +53,6 @@ export default {
       }],
     };
   },
-  created() {
-    this.getTests();
-    this.getRunners();
-  },
   methods: {
     apllyFilter(listBy) {
       this.listBy = listBy;
