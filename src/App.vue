@@ -29,6 +29,9 @@ export default {
       runners: [],
     };
   },
+  created() {
+    this.getRunners();
+  },
   methods: {
     apllyFilter(listBy) {
       this.listBy = listBy;

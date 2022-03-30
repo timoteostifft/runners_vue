@@ -47,9 +47,11 @@ export default {
         });
     },
     async register(data) {
+      console.log(data);
       await api
         .post('/runners/add/', data)
-        .then(() => {
+        .then((response) => {
+          console.log(response);
           this.$emit('reload');
         })
         .catch((error) => {

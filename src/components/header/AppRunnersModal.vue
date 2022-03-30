@@ -28,6 +28,7 @@
             name='cpf'
             id='cpf' required
             placeholder="XXX.XXX.XXX-XX"
+            v-model='form.cpf'
           >
         </label>
 
@@ -38,6 +39,7 @@
             name='birth'
             id='birth' required
             placeholder="YY/MM/DD"
+            v-model='form.birth'
           >
         </label>
         </form>
