@@ -3,26 +3,26 @@
     <header>
       <h1>Listagem de <br /><span>Corridas</span></h1>
       <button type="button" @click='handleUseModal'>
-        <img alt="Register Icon" src="../assets/addIcon.png" />
+        <img alt="Register Icon" src="../../../assets/addIcon.png" />
       </button>
 
       <AppTestForm v-show='isModalVisible' @close='handleUseModal' @submit='register'/>
     </header>
-    <div id="testsContainer" v-for="test in tests" :key="test.id" @add='getTests'>
+    <!-- <div id="testsContainer" v-for="test in tests" :key="test.id" @add='getTests'>
       <AppTestCard v-bind:test="test" @delete="getTests"/>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import api from '../plugins/api';
-import AppTestCard from './AppTestCard.vue';
-import AppTestForm from './AppTestForm.vue';
+import api from '../../../plugins/api';
+// import AppTestCard from './AppTestCard.vue';
+import AppTestForm from '../../AppTestForm.vue';
 
 export default {
   name: 'App',
   components: {
-    AppTestCard,
+    // AppTestCard,
     AppTestForm,
   },
   data() {

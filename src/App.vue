@@ -2,7 +2,7 @@
   <div id="app">
     <AppHeader v-bind:runners='runners' @reload='getRunners'/>
     <AppSearchbar @select='apllyFilter'/>
-    <!-- <AppTestCardContainer v-bind:listBy="listBy"/> -->
+    <AppTestCardContainer v-bind:listBy="listBy"/>
     <AppFooter/>
   </div>
 </template>
@@ -10,7 +10,7 @@
 <script>
 import AppHeader from './components/header/AppHeader.vue';
 import AppSearchbar from './components/main/searchbar/AppSearchBar.vue';
-import AppTestCardContainer from './components/AppTestCardContainer.vue';
+import AppTestCardContainer from './components/main/testsContainer/AppTestCardContainer.vue';
 import AppFooter from './components/footer/AppFooter.vue';
 import api from './plugins/api';
 
