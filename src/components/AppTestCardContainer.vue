@@ -31,20 +31,37 @@ export default {
       isModalVisible: false,
     };
   },
+  props: ['listBy'],
   created() {
-    this.getTests();
+    this.getTests(this.listBy);
   },
   methods: {
-    async getTests() {
-      await api
-        .get('/tests/listByResult')
-        .then((response) => {
-          this.tests = response.data;
-        })
-        .catch((error) => {
-          // eslint-disable-next-line no-console
-          console.log(error);
-        });
+    async getTests(listBy) {
+      if (listBy === 'result') {
+        await api
+          .get('/tests/listByResult')
+          .then((response) => {
+            this.tests = response.data;
+            console.log(this.tests);
+          })
+          .catch((error) => {
+            // eslint-disable-next-line no-console
+            console.log(error);
+          });
+      }
+
+      if (listBy === 'age') {
+        await api
+          .get('/tests/listByAge')
+          .then((response) => {
+            this.tests = response.data;
+            console.log(this.tests);
+          })
+          .catch((error) => {
+            // eslint-disable-next-line no-console
+            console.log(error);
+          });
+      }
     },
     handleUseModal() {
       this.isModalVisible = !this.isModalVisible;
@@ -58,7 +75,7 @@ export default {
         .catch((error) => {
           console.log(error);
         });
-      this.getTests();
+      this.getTests(this.listBy);
       this.handleUseModal();
     },
   },
