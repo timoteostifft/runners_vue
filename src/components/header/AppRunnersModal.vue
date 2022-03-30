@@ -112,7 +112,7 @@ export default {
     margin: auto 1.5px auto auto;
     border-radius: 16px;
     background: #25bb75;
-    padding: 8px 8.5px;
+    padding: 8px 9.5px;
 
     img {
       height: 14px;
