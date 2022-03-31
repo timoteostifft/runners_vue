@@ -9,7 +9,7 @@
       <AppTestForm v-show='isModalVisible' @close='handleUseModal' @submit='register'/>
     </header>
     <div id="testsContainer" v-for="test in tests" :key="test.id">
-      <AppTestCard v-bind:test="test" v-bind:runners="runners"/>
+      <AppTestCard v-bind:test="test" v-bind:runners="runners" @reload='reload'/>
     </div>
   </div>
 </template>
@@ -37,6 +37,9 @@ export default {
     },
     register(data) {
       console.log('Cadastro', data);
+    },
+    reload() {
+      this.$emit('reload');
     },
   },
 };
