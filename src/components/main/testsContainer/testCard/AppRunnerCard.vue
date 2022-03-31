@@ -4,7 +4,7 @@
        <div id='header'>
         <h3>Listagem de Corredores</h3>
         <button @click="close">
-          <img alt="Remove Icon" src="../assets/removeIcon.png" />
+          <img alt="Remove Icon" src="../../../../assets/removeIcon.png" />
         </button>
       </div>
       <div id='container' v-for='runner in test.runners' :key='runner.id'>
@@ -16,10 +16,10 @@
         </div>
         <div id='buttons'>
           <button @click='()=>{$emit("remove",runner.id)}'>
-            <img src="../assets/binIcon.png" alt="">
+            <img src="../../../../assets/binIcon.png" alt="">
           </button>
           <button>
-            <img src="../assets/editIcon.png" alt="">
+            <img src="../../../../assets/editIcon.png" alt="">
           </button>
         </div>
       </div>

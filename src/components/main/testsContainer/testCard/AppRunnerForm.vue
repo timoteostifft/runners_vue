@@ -4,7 +4,7 @@
       <div id='header'>
         <h3>Cadastro de Corredor</h3>
         <button @click="close">
-          <img alt="Remove Icon" src="../assets/removeIcon.png" />
+          <img alt="Remove Icon" src="../../../../assets/removeIcon.png" />
         </button>
       </div>
 
@@ -14,7 +14,7 @@
             {{runner}}
           </div>
           <button @click="register(runner.id)">
-            <img alt="Add Icon" src="../assets/addIcon.png">
+            <img alt="Add Icon" src="../../../../assets/addIcon.png">
           </button>
         </div>
       </div>
