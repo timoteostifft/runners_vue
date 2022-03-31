@@ -59,18 +59,16 @@ export default {
     handleUseForm() {
       this.isFormVisible = !this.isFormVisible;
     },
-    register(data) {
-      console.log(data);
-    },
-    async insertInto(testId, runnerId) {
+    async register(runnerId) {
       await api
-        .post(`/tests/add/${testId}/${runnerId}`)
+        .post(`/tests/add/${this.test.id}/${runnerId}`)
         .then((response) => {
           console.log(response.status);
         })
         .catch((error) => {
           console.log(error);
         });
+      this.$emit('reload');
     },
   },
 };
