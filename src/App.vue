@@ -30,30 +30,11 @@ export default {
     return {
       listBy: 'result',
       runners: [],
-      tests: [{
-        id: 1,
-        type: 21,
-        date: '2022-03-11',
-        runners: [
-          {
-            id: 5,
-            name: 'Bruno',
-            cpf: '43156782145',
-            birth: '1998-12-03',
-            time: null,
-          },
-          {
-            id: 4,
-            name: 'Bianca',
-            cpf: '12345678900',
-            birth: '2001-02-20',
-            time: '00:30:00',
-          },
-        ],
-      }],
+      tests: [],
     };
   },
   created() {
+    this.getTests(this.listBy);
     this.getRunners();
   },
   methods: {
@@ -74,13 +55,35 @@ export default {
     async getTests() {
       switch (this.listBy) {
         case 'result':
-          console.log(this.listBy);
+          await api
+            .get('/tests/listByResult')
+            .then((response) => {
+              this.tests = response.data;
+            })
+            .catch((error) => {
+              console.log(error);
+            });
           break;
         case 'age':
-          console.log(this.listBy);
+          await api
+            .get('/tests/listByAge')
+            .then((response) => {
+              this.tests = response.data;
+            })
+            .catch((error) => {
+              console.log(error);
+            });
           break;
         default:
-          console.log(this.listBy);
+          await api
+            .get('/tests/listByResult')
+            .then((response) => {
+              this.tests = response.data;
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+          break;
       }
     },
   },

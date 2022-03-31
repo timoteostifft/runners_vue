@@ -13,17 +13,10 @@
           <div id='content'>
             {{runner}}
           </div>
-          <button>+</button>
+          <button @click="register(runner.id)">
+            <img alt="Add Icon" src="../assets/addIcon.png">
+          </button>
         </div>
-      </div>
-
-      <div id="footer">
-        <button @click="close">
-          CANCELAR
-        </button>
-        <button @click='register'>
-          CADASTRAR
-        </button>
       </div>
     </div>
   </div>
@@ -37,8 +30,8 @@ export default {
     close() {
       this.$emit('close');
     },
-    register() {
-      this.$emit('submit', 'ID');
+    register(id) {
+      this.$emit('submit', id);
       this.close();
     },
   },
@@ -50,12 +43,23 @@ export default {
   display: flex;
   flex-direction: row;
 
+  & + #runnersContainer{
+    margin-top: 1rem;
+  }
+
   #content{
     border: 1px solid red;
   }
-
   button{
+    margin: auto 2.5px auto auto;
+    border-radius: 16px;
     background: #25bb75;
+    padding: 8px 8.5px;
+
+    img {
+      height: 14px;
+      width: 12px;
+    }
   }
 }
 </style>
