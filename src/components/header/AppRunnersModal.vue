@@ -27,7 +27,7 @@
             type="text"
             name='cpf'
             id='cpf' required
-            placeholder="XXX.XXX.XXX-XX"
+            placeholder="XXXXXXXXXXX"
             v-model='form.cpf'
           >
         </label>
@@ -35,10 +35,9 @@
         <label for="birth">
           Nascimento:
           <input
-            type="text"
+            type="date"
             name='birth'
             id='birth' required
-            placeholder="YY/MM/DD"
             v-model='form.birth'
           >
         </label>
@@ -114,7 +113,7 @@ export default {
     margin: auto 1.5px auto auto;
     border-radius: 16px;
     background: #25bb75;
-    padding: 8px 9.5px;
+    padding: 8px 8.5px;
 
     img {
       height: 14px;
