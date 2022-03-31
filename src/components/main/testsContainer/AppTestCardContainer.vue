@@ -8,21 +8,21 @@
 
       <AppTestForm v-show='isModalVisible' @close='handleUseModal' @submit='register'/>
     </header>
-    <!-- <div id="testsContainer" v-for="test in tests" :key="test.id">
-      <AppTestCard v-bind:test="test"/>
-    </div> -->
+    <div id="testsContainer" v-for="test in tests" :key="test.id">
+      <AppTestCard v-bind:test="test" v-bind:runners="runners"/>
+    </div>
   </div>
 </template>
 
 <script>
 // import api from '../../../plugins/api';
-// import AppTestCard from './AppTestCard.vue';
+import AppTestCard from './AppTestCard.vue';
 import AppTestForm from './AppTestForm.vue';
 
 export default {
   name: 'App',
   components: {
-    // AppTestCard,
+    AppTestCard,
     AppTestForm,
   },
   data() {
@@ -30,7 +30,7 @@ export default {
       isModalVisible: false,
     };
   },
-  props: ['tests'],
+  props: ['tests', 'runners'],
   methods: {
     handleUseModal() {
       this.isModalVisible = !this.isModalVisible;
