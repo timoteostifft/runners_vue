@@ -13,7 +13,7 @@
       </p>
     </div>
     <nav>
-      <button id="removeButton" v-on:click="remove(test.id)">
+      <button id="removeButton" v-on:click="removeTest">
         <img alt="Remove Icon" src="../../../assets/removeIcon.png" />
       </button>
       <button id="listButton" @click='handleUseModal'>
@@ -78,6 +78,17 @@ export default {
     async remove(runnerId) {
       await api
         .delete(`/tests/remove/${this.test.id}/${runnerId}`)
+        .then((response) => {
+          console.log(response.status);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      this.$emit('reload');
+    },
+    async removeTest() {
+      await api
+        .delete(`/tests/remove/${this.test.id}/`)
         .then((response) => {
           console.log(response.status);
         })
