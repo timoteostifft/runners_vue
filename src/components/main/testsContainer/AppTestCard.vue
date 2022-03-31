@@ -25,7 +25,12 @@
     </nav>
 
     <AppRunnerCard v-show='isModalVisible' @close='handleUseModal' v-bind:test="test"/>
-    <AppRunnerForm v-show='isFormVisible' @cancel='handleUseForm' @submit='register'/>
+    <AppRunnerForm
+      v-show='isFormVisible'
+      @close='handleUseForm'
+      @submit='register'
+      v-bind:runners='runners'
+    />
   </div>
 </template>
 
@@ -46,7 +51,7 @@ export default {
       isFormVisible: false,
     };
   },
-  props: ['test'],
+  props: ['test', 'runners'],
   methods: {
     handleUseModal() {
       this.isModalVisible = !this.isModalVisible;
@@ -54,18 +59,8 @@ export default {
     handleUseForm() {
       this.isFormVisible = !this.isFormVisible;
     },
-    async register(data) {
-      await api
-        .post('/runners/add/', data)
-        .then((response) => {
-          console.log(response.status);
-          this.insertInto(this.test.id, response.data.id);
-          this.$emit('add');
-          this.handleUseForm();
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+    register(data) {
+      console.log(data);
     },
     async insertInto(testId, runnerId) {
       await api
