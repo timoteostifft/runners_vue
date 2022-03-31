@@ -10,13 +10,18 @@
       <div id='container' v-for='runner in test.runners' :key='runner.id'>
         <div id='content'>
           <p>Nome: {{runner.name}}</p>
-          <p></p>
-          <p></p>
-          <p></p>
+          <p>CPF: {{runner.cpf}}</p>
+          <p>Nascimento: {{runner.birth}}</p>
+          <p>Resultado: {{runner.time}}</p>
         </div>
-        <button>
-          <img src="../assets/binIcon.png" alt="">
-        </button>
+        <div id='buttons'>
+          <button @click='()=>{$emit("remove",runner.id)}'>
+            <img src="../assets/binIcon.png" alt="">
+          </button>
+          <button>
+            <img src="../assets/editIcon.png" alt="">
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -38,7 +43,7 @@ export default {
 
 #container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 
   margin-top: 2rem;
   border-bottom: 1px solid #3a628d;
@@ -46,11 +51,21 @@ export default {
   & + #container{
     margin-top: 1rem;
   }
-  
+
+  #buttons{
+    margin-left: auto;
+    :nth-child(1){
+      background: #e52e4d;
+    }
+
+    :nth-child(2){
+      background: #46568f;
+    }
+  }
+
   button{
-    margin: auto 2.5px auto auto;
+    margin: auto 2.5px 10px auto;
     border-radius: 16px;
-    background: #e52e4d;
     padding: 8px 8.5px;
 
     img {

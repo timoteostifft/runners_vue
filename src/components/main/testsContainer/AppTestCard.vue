@@ -24,7 +24,12 @@
       </button>
     </nav>
 
-    <AppRunnerCard v-show='isModalVisible' @close='handleUseModal' v-bind:test="test"/>
+    <AppRunnerCard
+      v-show='isModalVisible'
+      @close='handleUseModal'
+      v-bind:test="test"
+      @remove='remove'
+    />
     <AppRunnerForm
       v-show='isFormVisible'
       @close='handleUseForm'
@@ -62,6 +67,17 @@ export default {
     async register(runnerId) {
       await api
         .post(`/tests/add/${this.test.id}/${runnerId}`)
+        .then((response) => {
+          console.log(response.status);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      this.$emit('reload');
+    },
+    async remove(runnerId) {
+      await api
+        .delete(`/tests/remove/${this.test.id}/${runnerId}`)
         .then((response) => {
           console.log(response.status);
         })
