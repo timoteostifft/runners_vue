@@ -8,14 +8,15 @@
         </button>
       </div>
       <div id='container' v-for='runner in test.runners' :key='runner.id'>
-        <div>
+        <div id='content'>
           <p>Nome: {{runner.name}}</p>
-          <p>Data de Nascimento: {{runner.birth}}</p>
+          <p></p>
+          <p></p>
+          <p></p>
         </div>
-        <div>
-          <p>Idade: {{18}}</p>
-          <p>CPF: {{runner.cpf}}</p>
-        </div>
+        <button>
+          <img src="../assets/binIcon.png" alt="">
+        </button>
       </div>
     </div>
   </div>
@@ -44,6 +45,18 @@ export default {
 
   & + #container{
     margin-top: 1rem;
+  }
+  
+  button{
+    margin: auto 2.5px auto auto;
+    border-radius: 16px;
+    background: #e52e4d;
+    padding: 8px 8.5px;
+
+    img {
+      height: 14px;
+      width: 12px;
+    }
   }
 }
 
