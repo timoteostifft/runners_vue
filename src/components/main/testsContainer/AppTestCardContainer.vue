@@ -15,7 +15,7 @@
 </template>
 
 <script>
-// import api from '../../../plugins/api';
+import api from '../../../plugins/api';
 import AppTestCard from './AppTestCard.vue';
 import AppTestForm from './AppTestForm.vue';
 
@@ -35,8 +35,16 @@ export default {
     handleUseModal() {
       this.isModalVisible = !this.isModalVisible;
     },
-    register(data) {
-      console.log('Cadastro', data);
+    async register(data) {
+      await api
+        .post('tests/add', data)
+        .then((response) => {
+          console.log(response.status);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      this.reload();
     },
     reload() {
       this.$emit('reload');

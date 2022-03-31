@@ -45,8 +45,8 @@ export default {
   data() {
     return {
       form: {
-        type: String,
-        date: String,
+        type: '',
+        date: '',
       },
     };
   },
