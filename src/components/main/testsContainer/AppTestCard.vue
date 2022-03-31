@@ -41,8 +41,8 @@
 
 <script>
 import api from '../../../plugins/api';
-import AppRunnerForm from '../../AppRunnerForm.vue';
-import AppRunnerCard from '../../AppRunnerCard.vue';
+import AppRunnerForm from './testCard/AppRunnerForm.vue';
+import AppRunnerCard from './testCard/AppRunnerCard.vue';
 
 export default {
   name: 'AppTestCard',
