@@ -8,8 +8,11 @@
       <p>
         Extensão: <span>{{ test.type }} km</span>
       </p>
-      <p>
+      <p v-if="test.runners !== undefined">
         Participantes: <span>{{ test.runners.length }}</span>
+      </p>
+      <p v-if='test.runners === undefined'>
+        Participantes: <span>{{countRunners()}}</span>
       </p>
     </div>
     <nav>
@@ -96,6 +99,26 @@ export default {
           console.log(error);
         });
       this.$emit('reload');
+    },
+    countRunners() {
+      let runnersQuantity = 0;
+
+      this.test.youngerThan25.forEach(() => {
+        runnersQuantity += 1;
+      });
+      this.test.youngerThan35.forEach(() => {
+        runnersQuantity += 1;
+      });
+      this.test.youngerThan45.forEach(() => {
+        runnersQuantity += 1;
+      });
+      this.test.youngerThan55.forEach(() => {
+        runnersQuantity += 1;
+      });
+      this.test.olderThan55.forEach(() => {
+        runnersQuantity += 1;
+      });
+      return (runnersQuantity);
     },
   },
 };
