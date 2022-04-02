@@ -36,9 +36,6 @@
             <button @click='()=>{$emit("remove",runner.id)}'>
               <img src="../../../../assets/binIcon.png" alt="">
             </button>
-            <button>
-              <img src="../../../../assets/editIcon.png" alt="">
-            </button>
           </div>
         </div>
       </div>
@@ -54,9 +51,6 @@
           <div class='ageButtons'>
             <button @click='()=>{$emit("remove",runner.id)}'>
               <img src="../../../../assets/binIcon.png" alt="">
-            </button>
-            <button>
-              <img src="../../../../assets/editIcon.png" alt="">
             </button>
           </div>
         </div>
@@ -74,9 +68,6 @@
             <button @click='()=>{$emit("remove",runner.id)}'>
               <img src="../../../../assets/binIcon.png" alt="">
             </button>
-            <button>
-              <img src="../../../../assets/editIcon.png" alt="">
-            </button>
           </div>
         </div>
       </div>
@@ -93,9 +84,6 @@
             <button @click='()=>{$emit("remove",runner.id)}'>
               <img src="../../../../assets/binIcon.png" alt="">
             </button>
-            <button>
-              <img src="../../../../assets/editIcon.png" alt="">
-            </button>
           </div>
         </div>
       </div>
@@ -111,9 +99,6 @@
           <div class='ageButtons'>
             <button @click='()=>{$emit("remove",runner.id)}'>
               <img src="../../../../assets/binIcon.png" alt="">
-            </button>
-            <button>
-              <img src="../../../../assets/editIcon.png" alt="">
             </button>
           </div>
         </div>
@@ -173,6 +158,7 @@ export default {
   .content{
     display: flex;
     flex-direction: row;
+    align-items: center;
 
     margin-top: 10px;
     border-bottom: 1px solid #3a628d;
