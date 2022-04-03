@@ -50,10 +50,6 @@ export default {
   & + #runnersContainer{
     margin-top: 1rem;
   }
-
-  #content{
-    border: 1px solid red;
-  }
   button{
     margin: auto 2.5px auto auto;
     border-radius: 16px;
