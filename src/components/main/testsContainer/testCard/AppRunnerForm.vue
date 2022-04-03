@@ -11,7 +11,9 @@
       <div id="body">
         <div id='runnersContainer' v-for="runner in runners" :key="runner.id">
           <div id='content'>
-            {{runner}}
+            <p>Nome: {{runner.name}}</p>
+            <p>CPF: {{runner.cpf}}</p>
+            <p>Nascimento: {{runner.birth}}</p>
           </div>
           <button @click="register(runner.id)">
             <img alt="Add Icon" src="../../../../assets/addIcon.png">
@@ -42,6 +44,8 @@ export default {
 #runnersContainer{
   display: flex;
   flex-direction: row;
+  margin-top: 2rem;
+  border-bottom: 1px solid #3a628d;
 
   & + #runnersContainer{
     margin-top: 1rem;
