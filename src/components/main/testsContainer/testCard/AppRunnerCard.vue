@@ -18,11 +18,12 @@
           <button @click='()=>{$emit("remove",runner.id)}'>
             <img src="../../../../assets/binIcon.png" alt="">
           </button>
-          <button>
+          <button @click="()=>{handleUseModal()}">
             <img src="../../../../assets/editIcon.png" alt="">
           </button>
         </div>
       </div>
+      <AppSetResultModal v-show='isModalVisible'/>
       <h4 v-show='test.youngerThan25'>Até 25 anos: </h4>
       <div class='younger'>
         <div class='content' v-for="runner in test.youngerThan25" :key="runner.id">
@@ -108,12 +109,25 @@
 </template>
 
 <script>
+import AppSetResultModal from './AppSetResultModal.vue';
+
 export default {
   name: 'AppRunnerForm',
   props: ['test'],
+  components: {
+    AppSetResultModal,
+  },
+  data() {
+    return {
+      isModalVisible: false,
+    };
+  },
   methods: {
     close() {
       this.$emit('close');
+    },
+    handleUseModal() {
+      this.isModalVisible = !this.isModalVisible;
     },
   },
 };
