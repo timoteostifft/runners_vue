@@ -23,7 +23,7 @@
           </button>
         </div>
       </div>
-      <AppSetResultModal v-show='isModalVisible'/>
+      <AppSetResultModal @close='handleUseModal' v-show='isModalVisible'/>
       <h4 v-show='test.youngerThan25'>Até 25 anos: </h4>
       <div class='younger'>
         <div class='content' v-for="runner in test.youngerThan25" :key="runner.id">
@@ -134,6 +134,10 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+
+.modal-backdrop{
+  z-index: 1;
+}
 
 #container {
   display: flex;
