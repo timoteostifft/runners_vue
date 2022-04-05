@@ -18,12 +18,12 @@
           <button @click='()=>{$emit("remove",runner.id)}'>
             <img src="../../../../assets/binIcon.png" alt="">
           </button>
-          <button @click="()=>{handleUseModal()}">
+          <button @click="()=>{handleUseModal(runner.id)}">
             <img src="../../../../assets/editIcon.png" alt="">
           </button>
         </div>
       </div>
-      <AppSetResultModal @close='handleUseModal' v-show='isModalVisible'/>
+      <AppSetResultModal @close='handleUseModal' v-show='isModalVisible' @submit="submit"/>
       <h4 v-show='test.youngerThan25'>Até 25 anos: </h4>
       <div class='younger'>
         <div class='content' v-for="runner in test.youngerThan25" :key="runner.id">
@@ -120,14 +120,19 @@ export default {
   data() {
     return {
       isModalVisible: false,
+      runnerId: '',
     };
   },
   methods: {
     close() {
       this.$emit('close');
     },
-    handleUseModal() {
+    handleUseModal(runnerId) {
       this.isModalVisible = !this.isModalVisible;
+      this.runnerId = runnerId;
+    },
+    submit(form) {
+      this.$emit('submit', this.runnerId, form);
     },
   },
 };
