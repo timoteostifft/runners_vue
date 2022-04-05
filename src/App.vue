@@ -110,7 +110,9 @@ export default {
     align-items: center;
 
     .modal {
-      width: 30rem;
+      overflow: scroll;
+      height: 26rem;
+      width: 26rem;
       padding: 1.5rem;
 
       background: #FFFFFF;
