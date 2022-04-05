@@ -111,7 +111,7 @@ export default {
 
     .modal {
       overflow: scroll;
-      height: 26rem;
+      max-height: 22rem;
       width: 26rem;
       padding: 1.5rem;
 
