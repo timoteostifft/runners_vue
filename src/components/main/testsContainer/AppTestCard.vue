@@ -32,6 +32,7 @@
       @close='handleUseModal'
       v-bind:test="test"
       @remove='remove'
+      @submit='setResult'
     />
     <AppRunnerForm
       v-show='isFormVisible'
@@ -92,6 +93,17 @@ export default {
     async removeTest() {
       await api
         .delete(`/tests/remove/${this.test.id}/`)
+        .then((response) => {
+          console.log(response.status);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      this.$emit('reload');
+    },
+    async setResult(runnerId, form) {
+      await api
+        .post(`/tests/setResult/${this.test.id}/${runnerId}`, form)
         .then((response) => {
           console.log(response.status);
         })
